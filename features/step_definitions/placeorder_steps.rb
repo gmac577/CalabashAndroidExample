@@ -1,280 +1,241 @@
 require 'calabash-android/calabash_steps'
 
+## Order Type ##
 
-def veggie_option
-	touch("CheckedTextView marked:'Turkey'")
-	touch("Button marked:'Next'")
+Given(/^I am on the "(.*?)" screen$/) do |ordertype|
+  #element_exists(text: uiquery, :"textField placeholder: 'Sandwich'")
+  performAction('assert_text',ordertype, true)
 end
 
-def cheese_option
-	touch("CheckedTextView marked:'Lettuce'")
-	touch("Button marked:'Next'")
-end
-
-def toast_decision
-	touch("CheckedTextView marked:'Provolone'")
-	touch("Button marked:'Next'")
-end
-
-def toasted_goodness
-	touch("CheckedTextView marked:'Yes'")
-	touch("Button marked:'Next'")
-end
-
-def your_info
-	touch("CheckedTextView marked:'2 minutes'")
-	touch("Button marked:'Next'")
-end
-
-def review_order
-	macro 'I enter text "George Washington" into field with id "your_name"'
-  	macro 'I enter text "gwashington@abc.com" into field with id "your_email"'
-	check_element_exists("TextView marked:'Review'")
-end
-
-## Place Order ##
-
-
-Given(/^I am on the Order type scree$/) do
-  check_element_exists("TextView marked:'Order type'")
-end
-
-When(/^I select the Sandwich option$/) do 
-  touch("CheckedTextView marked:'Sandwich'")
-end
-
-When(/^I touch the Next button$/) do 
-  touch("Button marked:'Next'")
-end
-
-Then(/^I will be placed on the Bread screen$/) do 
-  check_element_exists("TextView marked:'Bread'")
+When(/^I select the "(.*?)" option$/) do |sandwich| 
+  #touch("view marked: 'Sandwich'")
+  performAction('click_on_text',sandwich)
 end
 
 When(/^I swipe to the right$/) do
- performAction('swipe', 'right')
-end
-
-When(/^I touch the Previous button$/) do
-  touch("Button marked:'Previous'")
-end
-
-Then(/^I will be placed on the Order type screen$/) do
-  check_element_exists("TextView marked:'Order type'")
-end
-
-When(/^I select the Salad option$/) do
-  touch("CheckedTextView marked:'Salad'")
-end
-
-Then(/^I will be placed on the Salad type screen$/) do
-  check_element_exists("TextView marked:'Salad type'")
+  performAction('swipe', 'right')
 end
 
 
-## Bread ##
+When(/^I touch the "(.*?)" button$/) do |nextbutton|
+  performAction('press_button_with_text', nextbutton)
+end
+
+Then(/^I will be placed on the "(.*?)" screen$/) do |bread|
+  performAction('assert_text',bread, true)
+end
+
+
+##Breads Screen ###
 
 Given(/^I selected the Sandwich option$/) do
-  order = page(OrderTypePage).await    
-      @page = order.sandwich_option
-  
-  
+  #@ordertype.select_option
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'
 end
 
-Given(/^I am on the Bread screen$/) do 
-  check_element_exists("TextView marked:'Bread'")
+## Meats Screen ##
+
+And(/^I am ready to make my cold cuts selection$/) do
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'	
+  macro 'I touch the "White" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Meats"'
 end
 
-When(/^I select the Pretzel option/) do 
-  touch("CheckedTextView marked:'Pretzel'")
-end
-
-Then(/^I will be placed on the Meats screen$/) do
-   check_element_exists("TextView marked:'Meats'")
-end
-
-
-## Meats ##
-
-Given(/^I am ready to make my cold cuts selection$/) do
-  bread = page(BreadPage).await    
-      @page = bread.cold_cuts
-end
-
-Given(/^I am on the Meats screen$/) do
-  check_element_exists("TextView marked:'Meats'")
-end
-
-When(/^I select the Turkey option$/) do
-  touch("CheckedTextView marked:'Turkey'")
-end
-
-When(/^I select the Roast Beef option$/) do
-  touch("CheckedTextView marked:'Roast Beef'")
-end
-
-Then(/^I will be placed on the Veggies screen$/) do
-  check_element_exists("TextView marked:'Veggies'")
-end
-
-
-## Veggies ##
+## Veggies Screen ##
 
 Given(/^I am ready to make my veggie selection$/) do
-  sandwich_option
-  cold_cuts
-  veggie_option
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'
+  #macro 'I see "Bread"'	
+  macro 'I touch the "White" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Meats"'
+  #macro 'I see "Meats"'	
+  macro 'I touch the "Turkey" text'
+  macro 'I touch the "Roast Beef" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Veggies"'
 end
 
-Given(/^I am on the Veggies screen$/) do
-  check_element_exists("TextView marked:'Veggies'")
-end
-
-When(/^I select the Lettuce option$/) do
-  touch("CheckedTextView marked:'Lettuce'")
-end
-
-When(/^I select the Cucumbers option$/) do
-  touch("CheckedTextView marked:'Cucumbers'")
-end
-
-Then(/^I will be placed on the Cheeses screen$/) do
-  check_element_exists("TextView marked:'Cheeses'")
-end
-
-
-## Cheese ##
+## Cheeses Screen ##
 
 Given(/^I am ready to make my cheese selection$/) do
-  sandwich_option
-  cold_cuts
-  veggie_option
-  cheese_option
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'
+  #macro 'I see "Bread"'	
+  macro 'I touch the "White" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Meats"'
+  #macro 'I see "Meats"'	
+  macro 'I touch the "Turkey" text'
+  macro 'I touch the "Roast Beef" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Veggies"'
+  #macro 'I see "Veggies"'	
+  macro 'I touch the "Tomatoes" text'
+  macro 'I touch the "Peppers" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Cheeses"'
 end
 
-Given(/^I am on the Cheeses screen$/) do
-  check_element_exists("TextView marked:'Veggies'")
-end
 
-When(/^I select the Swiss option$/) do
-  touch("CheckedTextView marked:'Swiss'")
-end
-
-When(/^I select the Provolone option$/) do
-  touch("CheckedTextView marked:'Provolone'")
-end
-
-Then(/^I will be placed on the Toasted screen$/) do
-  check_element_exists("TextView marked:'Toasted?'")
-end
-
-## Toasted ##
+## Toasting Decision screen ##
 
 Given(/^I am ready to decide to toast my sandwich$/) do
-  sandwich_option
-  cold_cuts
-  veggie_option
-  cheese_option
-  toast_decision
-end
-
-Given(/^I am on the Toasted screen$/) do
-  check_element_exists("TextView marked:'Toasted?'")
-end
-
-Given(/^I select the Yes option$/) do
-  touch("CheckedTextView marked:'Yes'")
-end
-
-Then(/^I will be placed on the Toast time screen$/) do
-  check_element_exists("TextView marked:'Toast time'")
-end
-
-Given(/^I select the No option$/) do
-  touch("CheckedTextView marked:'No'")
-end
-
-Then(/^I will be placed on the Your info screen$/) do
-  check_element_exists("TextView marked:'Your info'")
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'
+  #macro 'I see "Bread"'	
+  macro 'I touch the "White" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Meats"'
+  #macro 'I see "Meats"'	
+  macro 'I touch the "Turkey" text'
+  macro 'I touch the "Roast Beef" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Veggies"'
+  #macro 'I see "Veggies"'	
+  macro 'I touch the "Tomatoes" text'
+  macro 'I touch the "Peppers" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Cheeses"'
+  macro 'I touch the "Swiss" text'
+  macro 'I touch the "Provolone" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Toasted"'
 end
 
 
-## Toasted Time ## 
+## Toasting Time screen ##
 
 Given(/^I am selecting the toasting time for my sandwich$/) do
-  sandwich_option
-  cold_cuts
-  veggie_option
-  cheese_option
-  toast_decision
-  toasted_goodness
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'
+  macro 'I see "Bread"'	
+  macro 'I touch the "White" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Meats"'
+  macro 'I see "Meats"'	
+  macro 'I touch the "Turkey" text'
+  macro 'I touch the "Roast Beef" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Veggies"'
+  macro 'I see "Veggies"'	
+  macro 'I touch the "Tomatoes" text'
+  macro 'I touch the "Peppers" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Cheeses"'
+  macro 'I touch the "Swiss" text'
+  macro 'I touch the "Provolone" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Toasted"'
+  macro 'I touch the "Yes" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Toast time"'
 end
 
-Given(/^I am on the Toast time screen$/) do
-  check_element_exists("TextView marked:'Toast time'")
-end
 
-Given(/^I select the two minutes option$/) do
-  touch("CheckedTextView marked:'2 minutes'")
-end
-
-
-## Your Info ##
+## Your Info screen ##
 
 Given(/^I am ready to enter my information for my sandwich order$/) do
-  sandwich_option
-  cold_cuts
-  veggie_option
-  cheese_option
-  toast_decision
-  toasted_goodness
-  your_info
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'
+  macro 'I see "Bread"'	
+  macro 'I touch the "White" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Meats"'
+  macro 'I see "Meats"'	
+  macro 'I touch the "Turkey" text'
+  macro 'I touch the "Roast Beef" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Veggies"'
+  macro 'I see "Veggies"'	
+  macro 'I touch the "Tomatoes" text'
+  macro 'I touch the "Peppers" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Cheeses"'
+  macro 'I touch the "Swiss" text'
+  macro 'I touch the "Provolone" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Toasted"'
+  macro 'I touch the "Yes" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Toast time"'
+  macro 'I touch the "2 minutes" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Your info"'
 end
 
-Given(/^I am on the Your info screen$/) do
-  check_element_exists("TextView marked:'Your info'")
+
+And(/^I enter "(.*?)" into the Name field$/) do |fullname|
+  performAction('enter_text_into_id_field', fullname, 'your_name')
 end
 
-Given(/^I enter "(.*?)" into the Name field$/) do |fullname|
-  performAction('enter_text_into_id_field',fullname, 'your_name')
-  #touch("TextView marked:'Name'")
-  #keyboard_enter_text("George Washington")
+And(/^I enter "(.*?)" into the Email field$/) do |fullemail|
+  performAction('enter_text_into_id_field', fullemail, 'your_email')
 end
 
-Given(/^I enter "(.*?)" into the Email field$/) do |fullemail|
-  performAction('enter_text_into_id_field',fullemail, 'your_email')
-end
-
-Then(/^I will be placed on the Review screen$/) do
-  check_element_exists("TextView marked:'Review'")
-end
 
 ## Review ##
 
 Given(/^I am ready to review my order information$/) do
-  sandwich_option
-  cold_cuts
-  veggie_option
-  cheese_option
-  toast_decision
-  toasted_goodness
-  your_info
-  review_order
+  macro 'I see "Order type"'	
+  macro 'I touch the "Sandwich" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Bread"'
+  macro 'I see "Bread"'	
+  macro 'I touch the "White" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Meats"'
+  macro 'I see "Meats"'	
+  macro 'I touch the "Turkey" text'
+  macro 'I touch the "Roast Beef" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Veggies"'
+  macro 'I see "Veggies"'	
+  macro 'I touch the "Tomatoes" text'
+  macro 'I touch the "Peppers" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Cheeses"'
+  macro 'I touch the "Swiss" text'
+  macro 'I touch the "Provolone" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Toasted"'
+  macro 'I touch the "Yes" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Toast time"'
+  macro 'I touch the "2 minutes" text'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Your info"'
+  macro 'I enter text "George Washington" into field with id "your_name"'
+  macro 'I enter text "gwashington@abc.com" into field with id "your_email"'
+  macro 'I press view with id "next_button"'
+  macro 'I should see "Review"'
 end
 
-Given(/^I am on the Review screen$/) do
-  check_element_exists("TextView marked:'Review'")
+Given(/^I will see that the Order type field will have "(.*?)" displayed$/) do |sandwich|
+  performAction('assert_text',sandwich, true)
 end
 
-Given(/^I will see that the Order type field will have Sandwich displayed$/) do
-  check_element_exists("TextView marked:'Sandwich'")
+Then(/^I will see the email confirmation popup with "(.*?)" displayed$/) do |suborder|
+  performAction('assert_text',suborder, true)
 end
 
-When(/^I touch the "(.*?)" button$/) do |nextbutton|
-  performAction('press_button_with_text', nextbutton)
-  #touch("TextView marked:'Submit order'")
-end
 
-Then(/^I will see the email confirmation popup with Place the order with the deli displayed$/) do
-  check_element_exists3("TextView marked:'Place the order with the deli? You will receive an email confirmation.'")
-end
+
