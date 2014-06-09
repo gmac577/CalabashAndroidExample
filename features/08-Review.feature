@@ -9,7 +9,7 @@ Feature: Reviewing order information on the Review screen
   
   
 Scenario: Selecting the Toasting Option for a Sandwich
-  	Given I am on the Review screen
-  	And I will see that the Order type field will have Sandwich displayed
+  	Given I am on the "Review" screen
+  	And I will see that the Order type field will have "Sandwich" displayed
     When I touch the "Submit order" button
-  	Then I will see the email confirmation popup with Place the order with the deli displayed
+  	Then I will see the email confirmation popup with "Place the order with the deli" displayed

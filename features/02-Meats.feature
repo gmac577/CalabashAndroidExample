@@ -10,8 +10,8 @@ Feature: Selecting the Meat option for the sandwich
 
    @sandwich 
    Scenario: Selecting the Meat Options for a Sandwich
-  	Given I am on the Meats screen
-  	When I select the Turkey option
-  	And I select the Roast Beef option
-  	And I touch the Next button
-  	Then I will be placed on the Veggies screen
+  	Given I am on the "Meats" screen
+  	When I select the "Turkey" option
+  	And I select the "Roast Beef" option
+  	And I touch the "Next" button
+  	Then I will be placed on the "Veggies" screen

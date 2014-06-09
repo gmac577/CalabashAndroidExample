@@ -9,8 +9,8 @@ Feature: Selecting the Cheese Option for the Sandwich
   
   
 Scenario: Selecting the Cheese Options for a Sandwich
-  	Given I am on the Cheeses screen
-  	When I select the Swiss option
-  	And I select the Provolone option
-  	And I touch the Next button
-  	Then I will be placed on the Toasted screen
+  	Given I am on the "Cheeses" screen
+  	When I select the "Swiss" option
+  	And I select the "Provolone" option
+  	And I touch the "Next" button
+  	Then I will be placed on the "Toasted" screen

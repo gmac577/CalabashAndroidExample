@@ -9,8 +9,8 @@ Feature: Entering information on the Your Info screen for the Sandwich order
   
   
 Scenario: Selecting the Toasting Option for a Sandwich
-  	Given I am on the Your info screen
+  	Given I am on the "Your info" screen
   	And I enter "George Washington" into the Name field
   	And I enter "gwashington@abc.com" into the Email field
-    When I touch the Next button
-  	Then I will be placed on the Review screen
+    When I touch the "Next" button
+  	Then I will be placed on the "Review" screen

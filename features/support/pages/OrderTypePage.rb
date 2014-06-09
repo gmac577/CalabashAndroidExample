@@ -6,8 +6,26 @@ class OrderTypePage < Calabash::ABase
     "* text:'Order type'"
   	end
 
-	def sandwich_option
-	touch("CheckedTextView marked:'Sandwich'")
-  	touch("Button marked:'Next'")
-	end
-end	
+  @@sandwich = "* text:'Sandwich'"
+  @@salad = "* text:'Salad'"
+  @@next = "Button marked:'Next'"
+  @@ordertype = "TextView {text CONTAINS 'Order type'}"
+
+
+  def select_sandwich
+    touch(@@sandwich)
+  end
+
+  def select_salad
+    touch(@@salad)
+  end
+
+  def next_btn
+    touch(@@next)
+  end
+
+  def assert_order_type
+    wait_for_elements_exist([@@ordertype],:timeout => 5)
+  end
+
+end

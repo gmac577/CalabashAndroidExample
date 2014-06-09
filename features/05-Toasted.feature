@@ -9,14 +9,14 @@ Feature: Selecting the Toasted Option for the Sandwich
   
   
 Scenario: Selecting the "Yes" Toasting Option for a Sandwich
-  	Given I am on the Toasted screen
-  	And I select the Yes option
-    When I touch the Next button
-  	Then I will be placed on the Toast time screen
+  	Given I am on the "Toasted" screen
+  	And I select the "Yes" option
+    When I touch the "Next" button
+  	Then I will be placed on the "Toast time" screen
 
 
 Scenario: Selecting the "No" Toasting Option for a Sandwich
-  	  Given I am on the Toasted screen
-  	  And I select the No option
-  	  When I touch the Next button
-  	  Then I will be placed on the Your info screen
+  	  Given I am on the "Toasted" screen
+  	  And I select the "No" option
+  	  When I touch the "Next" button
+  	  Then I will be placed on the "Your info" screen
