@@ -6,10 +6,10 @@ Feature: Selecting the Toasting Time Option for the Sandwich
 
   Background: Navigating to the Toasted Time Screen
     Given I am selecting the toasting time for my sandwich
-  
-  
+
+
 Scenario: Selecting the Toasting Option for a Sandwich
-  	Given I am on the "Toast time" screen
-  	And I select the "2 minutes" option
-    When I touch the "Next" button
-  	Then I will be placed on the "Your info" screen
+  	Given I am on the Toast time screen
+  	And I select the 2 minute option
+    When I touch the Next button
+  	Then I will be placed on the Your info screen
