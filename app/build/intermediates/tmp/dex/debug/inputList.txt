@@ -1,2 +1,2 @@
-/Users/scouseusa/Development/RIIS/CalabashExample/CalabashExampleAndroidWizardPage/app/build/intermediates/classes/debug
-/Users/scouseusa/Development/RIIS/CalabashExample/CalabashExampleAndroidWizardPage/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-f66f67f24fb16d02b5748e3e121881d592a9ebf1.jar
+C:\Users\nbaumgartner\Documents\GitHub\CalabashAndroidExample\app\build\intermediates\classes\debug
+C:\Users\nbaumgartner\Documents\GitHub\CalabashAndroidExample\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-4170fab09bf58e518551dfe5f59f86b87670bcf1.jar

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/scouseusa/Development/RIIS/CalabashExample/CalabashExampleAndroidWizardPage/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/nbaumgartner/Documents/GitHub/CalabashAndroidExample/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="review_green">#ff669900</color>
     <color name="step_pager_next_tab_color">#10000000</color>
@@ -9,12 +9,12 @@
     <color name="step_pager_selected_tab_color">#ff0099cc</color>
     <color name="text_light">#66000000</color>
     <declare-styleable name="AppTheme"><attr format="reference" name="textAppearanceFinish"/></declare-styleable>
-    <!-- From: file:/Users/scouseusa/Development/RIIS/CalabashExample/CalabashExampleAndroidWizardPage/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/nbaumgartner/Documents/GitHub/CalabashAndroidExample/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="step_pager_tab_height">3dp</dimen>
     <dimen name="step_pager_tab_spacing">4dp</dimen>
     <dimen name="step_pager_tab_width">32dp</dimen>
-    <!-- From: file:/Users/scouseusa/Development/RIIS/CalabashExample/CalabashExampleAndroidWizardPage/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/nbaumgartner/Documents/GitHub/CalabashAndroidExample/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Place Order</string>
     <string name="finish">Submit order</string>
@@ -28,7 +28,7 @@
     <string name="submit_confirm_button">Place order</string>
     <string name="submit_confirm_message">Place the order with the deli? You will receive an email
         confirmation.</string>
-    <!-- From: file:/Users/scouseusa/Development/RIIS/CalabashExample/CalabashExampleAndroidWizardPage/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/nbaumgartner/Documents/GitHub/CalabashAndroidExample/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="textAppearanceFinish">@style/TextAppearanceFinish</item>
