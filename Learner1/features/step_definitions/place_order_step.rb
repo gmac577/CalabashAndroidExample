@@ -1,9 +1,10 @@
 Given(/^I am on the order type screen$/) do
-  query("* text:'Order type'")
+  #query("* text:'Order type'")
+  page(OrderType).await
 end
 
 When(/^I select the sandwich radio button$/) do
-  touch query("* text:'Sandwich'")
+  page(OrderType).select_sandwich
 end
 
 Then(/^The next button becomes enabled$/) do
