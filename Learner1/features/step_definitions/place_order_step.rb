@@ -1,13 +1,13 @@
 Given(/^I am on the order type screen$/) do
-  pending # express the regexp above with the code you wish you had
+  query("* text:'Order type'")
 end
 
 When(/^I select the sandwich radio button$/) do
-  pending # express the regexp above with the code you wish you had
+  touch query("* text:'Sandwich'")
 end
 
 Then(/^The next button becomes enabled$/) do
-  pending # express the regexp above with the code you wish you had
+  query("* id:'next_button' enabled:false")
 end
 
 When(/^I select the salad radio button$/) do
