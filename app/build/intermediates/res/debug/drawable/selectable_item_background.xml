@@ -20,4 +20,4 @@
     <item android:drawable="@drawable/item_focused" android:state_selected="true" />
     <item android:drawable="@android:color/transparent" />
 </selector>
-<!-- From: file:/C:/Users/nbaumgartner/Documents/GitHub/CalabashAndroidExample/app/src/main/res/drawable/selectable_item_background.xml -->
+<!-- From: file:/Users/gmccowey/Development/CalabashExampleAndroidWizardPage/app/src/main/res/drawable/selectable_item_background.xml -->
