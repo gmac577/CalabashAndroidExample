@@ -23,4 +23,12 @@ class OrderType < Calabash::ABase
 	def select_sandwich
 		touch(sandwich_radio_button)
 	end
+
+	def salad_radio_button
+		query("* text:'Salad'")
+	end
+
+	def select_salad
+		touch(salad_radio_button)
+	end
 end

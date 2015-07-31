@@ -2,3 +2,18 @@ start_test_server_in_background
 start_test_server_in_background
 query("*")
 exit
+exit
+reinstall_apps
+reinstall_apps
+start_test_server_in_background
+exit
+start_test_server_in_background
+query("*")
+query("TextView")
+query("*", :id)
+exit
+start_test_server_in_background
+query("* text:'Salad'")
+exit
+start_test_server_in_background
+exit

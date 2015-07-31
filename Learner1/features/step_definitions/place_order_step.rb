@@ -8,19 +8,19 @@ When(/^I select the sandwich radio button$/) do
 end
 
 Then(/^The next button becomes enabled$/) do
-  query("* id:'next_button' enabled:false")
+  query("* id:'next_button' enabled:true")
 end
 
 When(/^I select the salad radio button$/) do
-  pending # express the regexp above with the code you wish you had
+  touch query("* text:'Salad'")
 end
 
 Given(/^I am on order screen with sandwich slected$/) do
-  pending # express the regexp above with the code you wish you had
+  page(OrderType).select_sandwich
 end
 
 When(/^I click the Next button$/) do
-  pending # express the regexp above with the code you wish you had
+  touch query("* id:'next_button' enabled:true")
 end
 
 Then(/^The Bread page opens$/) do
@@ -28,7 +28,7 @@ Then(/^The Bread page opens$/) do
 end
 
 Given(/^I am on order screen with salad slected$/) do
-  pending # express the regexp above with the code you wish you had
+  page(OrderType).select_salad
 end
 
 Then(/^The Salad Type page opens$/) do
