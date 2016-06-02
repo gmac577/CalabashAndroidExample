@@ -1,0 +1,5 @@
+server_version
+start_test_server_in_background
+server_version
+query("*")
+exit
