@@ -7,17 +7,17 @@ require 'calabash-android/calabash_steps'
 ########                    #
 #############################
 Given(/^I am on the Order type screen$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  page(OrderTypePage).assert_order_type
 end
 
 When(/^I select the Sandwich option$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  touch query("* text:'Sandwich'")
 end
 
 When(/^I touch the Next button$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  touch query("Button marked:'Gordon'")
 end
 
 Then(/^I will be placed on the Bread screen$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  query("TextView {text CONTAINS 'Bread'}")
 end
