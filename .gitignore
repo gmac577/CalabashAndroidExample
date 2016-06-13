@@ -36,3 +36,23 @@
 *.class
 
 *.class
+
+.idea/.name
+
+*.xml
+
+*.xml
+
+*.xml
+
+*.xml
+
+*.xml
+
+*.iml
+
+*.gradle
+
+*.iml
+
+*.properties
