@@ -15,7 +15,7 @@ When(/^I select the Sandwich option$/) do
 end
 
 When(/^I touch the Next button$/) do
-  touch query("Button marked:'Gordon'")
+  touch query("Button marked:'Next'")
 end
 
 Then(/^I will be placed on the Bread screen$/) do
